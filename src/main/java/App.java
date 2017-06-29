@@ -5,14 +5,24 @@ public class App {
     Console myConsole = System.console();
     Game myGame = new Game();
 
-    System.io.println("Welcome to Hangman!");
+    System.out.println("Welcome to Hangman!");
+    System.out.println(myGame.getUnguessedString());
+    while (!myGame.isWinner()) {
+      System.out.println("Please enter a letter.");
+      String userGuessedLetter = myConsole.readLine();
+      System.out.println("Your guesses: " + myGame.acceptGuessedLetter(userGuessedLetter));
+      System.out.println("Your letter is in word?" + myGame.isLetterInWord(userGuessedLetter));
+      System.out.println("Number of matches: " + myGame.swapGuessedLetter(userGuessedLetter));
+      System.out.println(myGame.getUnguessedString());
 
-    //Loop while there is no hangman
-    System.io.println("Please enter a letter.");
-    String userGuessLetter = myConsole.readLine();
-    myGame.acceptGuessedLetter(userGuessLetter);
-    myGame.isLetterInWord(userGuessLetter);
-    myGame.getUnguessedString
+    }
+    // System.out.println("Please enter a letter.");
+    // String userGuessedLetter = myConsole.readLine();
+    // System.out.println("Your guesses: " + myGame.acceptGuessedLetter(userGuessedLetter));
+    // System.out.println("Your letter is in word?" + myGame.isLetterInWord(userGuessedLetter));
+    // System.out.println("Number of matches: " + myGame.swapGuessedLetter(userGuessedLetter));
+    // System.out.println(myGame.getUnguessedString());
+    System.out.println("Your done");
 
   }
 }

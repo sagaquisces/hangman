@@ -1,13 +1,20 @@
-import java.util.ArrayList;
+import java.util.*;
+
 
 public class Game {
   private ArrayList<String> mGuessedLettersArray = new ArrayList<String>();
   private String mSecretWord;
   private String mUnguessedString;
   private int mCounter = 0;
+  private String[] words = { "secret", "toaster","turtle", "cow", "robot", "woman" };
   public Game() {
-    mSecretWord = "secret";
-    mUnguessedString = "______";
+    mSecretWord = words[(int) (Math.random() * words.length)];
+    int mSecretWordLength = mSecretWord.length();
+    char[] chars = new char[mSecretWordLength];
+    Arrays.fill(chars, '_');
+    String s = new String(chars);
+    // mUnguessedString = String.join("", Collections.nCopies(mSecretWord.length(), _));
+    mUnguessedString = s;
   }
 
   public ArrayList<String> getGuessedLettersArray() {
