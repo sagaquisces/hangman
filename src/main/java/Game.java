@@ -50,10 +50,7 @@ public class Game {
 
     ArrayList<String> result = getGuessedLettersArray();
 
-    if(!isDuplicateGuessed(myLetter,result))
-    {
-      result.add(myLetter);
-    }
+    result.add(myLetter);
 
     return result;
   }
